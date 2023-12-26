@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>=.=</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='Event.js'></script>
+    <script>
+        $(document).ready(function () {
+            getAll();
+        });
+        $(window).on("unload", function() { });
+    </script>
+</head>
+<body>
+    <div class="setbody">
+        <div class="header">
+            <h1>OOO購物網</h1>
+        </div>
+
+        <div class="mainbody">  <!-- header以下主要區塊 -->
+            <div class="options">
+                <br>
+                <a href="discount.html">限時優惠</a><br>
+                <a href="https://www.youtube.com">商品</a><br>
+                <a href="cart.html">購物車</a><br>
+                <a href="https://www.youtube.com">訂單查詢</a><br>
+                <a href="https://www.youtube.com">關於我們</a>
+            </div>
+
+            <div class="rightbody">
+                <div class="slider">
+                    <div class="carousel">
+                        <div class="container">
+                            <a href="https://www.youtube.com" target="_blank"
+                                ><img src="博美1.jpg"
+                            /></a>
+                            <a href="https://www.youtube.com" target="_blank"
+                                ><img src="博美2.jpg"
+                            /></a>
+                            <a href="https://www.youtube.com" target="_blank"
+                                ><img src="博美3.jpeg"
+                            /></a>
+                        </div>
+                        <div class="shift">
+                            <div class="btn left" onclick="leftShift()">&lt;</div>
+                            <div class="btn right" onclick="rightShift()">&gt;</div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="product">
+                        <a href="product.html">
+                        <img src="博美1.jpg" alt="圖片一">
+                        <p>商品一</p></a>
+                        <a href="#"><button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美2.jpg" alt="圖片二">
+                        <p>商品二</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美3.jpeg" alt="圖片三">
+                        <p>商品三</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美1.jpg" alt="圖片四">
+                        <p>商品四</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美2.jpg" alt="圖片五">
+                        <p>商品五</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美3.jpeg" alt="圖片六">
+                        <p>商品六</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    let index = 0
+
+    // 圖片數量
+    let imageCount = document.querySelectorAll(
+        ".carousel .container img"
+    ).length
+
+    const bottom = document.querySelector(".carousel .bottom")
+    for (let i = 0; i < imageCount; i++) {
+        const indicator = document.createElement("div")
+        indicator.classList.add("indicator")
+        indicator.onclick = () => setIndex(i)
+    
+        bottom.append(indicator)
+    }
+
+    function createAuto() {
+        return setInterval(() => {
+            index++
+            refresh()
+        }, 3000)
+    }   
+    // 自動滾動
+    let autoTimer = createAuto()
+
+    function refresh() {
+        if (index < 0) {
+            // 下標小於 0 時，設置最右的圖片
+            index = imageCount - 1
+        } else if (index >= imageCount) {
+            // 下標超過上限時，設置最左的圖片
+            index = 0
+        }
+    
+        // 輪播框
+        let carousel = document.querySelector(".carousel")
+        let width = getComputedStyle(carousel).width
+        width = Number(width.slice(0, -2))
+    
+        carousel.querySelector(".container").style.left =
+            index * width * -1 + "px"
+    }
+
+    let refreshWrapper = (func) => {
+        // refresh 裝飾器
+        return function (...args) {
+            let result = func(...args)
+            refresh()
+        
+            // 重製自動滾動
+            clearInterval(autoTimer)
+            autoTimer = createAuto()
+            return result
+        }
+    }
+
+    let leftShift = refreshWrapper(() => {
+        index--
+    })
+    let rightShift = refreshWrapper(() => {
+        index++
+    })
+
+    let setIndex = refreshWrapper((idx) => {
+        index = idx
+    })
+
+    refresh()
+</script>

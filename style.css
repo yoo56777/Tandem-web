@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 100px; 
+}
+
+.setbody {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-top: 25px; 
+}
+
+.header {
+    flex:none;
+    position: fixed; /* 將頭部固定在頂部 */
+    top: 0; /* 確保它在頂部 */
+    width: 100%;
+    background-color: #121417;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000; /* 確保頭部始終在其他內容之上 */
+}
+
+.mainbody {
+    flex:auto;
+    /* margin-top: 66px; */
+    display: flex;
+    height: 100%;
+    flex-direction:column
+}
+
+/* .options {
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFFFFF	;
+    padding: 10px;
+}
+
+.options a {
+    color: #121417;
+    text-decoration: none;
+} */
+
+.options {
+    flex:none;
+    width: 12%;
+    display: flex;
+    border-style:solid;
+    border-width: 1px ;
+    border-color: #121417;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #FFFFFF;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+    font-size:0.5cm;
+    /* top: 20; */
+    /* left: 0;
+    width: 10%; */
+    z-index: 900;
+    /* margin-top: 17px; */
+}
+  
+.options a {
+    color: #121417;
+    text-decoration: none;
+}
+  
+.rightbody{
+    flex:auto;
+    margin-left: 13%;
+}
+
+.slider {
+    width: 100%;
+    height: 590px;
+    /* margin-top: 66px; */
+    border: 1px ;
+    background-color: #3e5e8d;
+}
+
+.carousel {
+    width: 100%;
+    height: 590px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.carousel .container {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    left: 0;
+
+    display: flex;
+
+    /* 過度動畫 1s */
+    transition: all 1s;
+}
+
+.carousel .container a {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.carousel .container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .shift .btn {
+    /* 絕對位置、垂直置中 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    background-color: teal;
+    color: white;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    /* 文字水平垂直置中 */
+    line-height: 50px;
+    text-align: center;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    /* 不透明度 0.5 */
+    opacity: 0.5;
+}
+.carousel .shift .left {
+    left: 20px;
+}
+.carousel .shift .right {
+    right: 20px;
+}
+
+.carousel .bottom {
+    position: absolute;
+    bottom: 20px;
+
+    /* 絕對位置、垂直置中 */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+.carousel .bottom .indicator {
+    height: 5px;
+    width: 40px;
+    background-color: teal;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.carousel:hover .bottom .indicator {
+    opacity: 1;
+}
+.carousel:hover .shift .btn {
+    opacity: 1;
+}
+
+.row {
+    width: 100%;
+    height: 350px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.productpage{
+    width: 100%; 
+    height: 500px;
+    flex: auto;
+    margin-left: 14%;
+    display:flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.showproduct{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size:0.8cm;
+}
+
+.producttext{
+    flex:auto;
+    /* width: 12%;
+    align-items: flex-start;
+    justify-content: flex-start; */
+    font-size:0.6cm;
+    text-align: left;
+    
+}
+
+
+.showproduct img {
+    width: 480px;  /* 設定圖片寬度 */
+    height: 320px; /* 設定圖片高度 */
+    object-fit: cover; /* 保持圖片的比例 */
+}
+
+.product {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 360px;  /* 設定圖片寬度 */
+    height: 240px; /* 設定圖片高度 */
+    object-fit: cover; /* 保持圖片的比例 */
+}
+
+.cartpage{
+    width: 100%; 
+    height: 100px;
+    flex: auto;
+    margin-left: 13%;
+    margin-top: 2%;
+    display:flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: antiquewhite; */
+    border: #121417 solid 2px; 
+
+    
+}
+
+.carttitle{
+    /* background-color: aqua; */
+    flex: none;
+    width: 200px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 60px;
+    text-align: center;
+    line-height: 50px;
+    font-size:0.6cm;
+    border-bottom: #121417 solid 2px; 
+    height:50px;    
+}
+
+.cartdetail{
+    width: 100%; 
+    height: 600px;
+    flex: auto;
+    margin-left: 13%;
+    display:flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+}
+
+.box{
+    width: 1000px;
+    height: 400px;
+    margin-top: 30px;
+    margin-left: 230px;
+    border: 1px solid rgb(0, 0, 0);
+}
+.top{
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    align-items: center;
+    font-size: 0.7cm;
+}
+table{
+    width: 680px;
+    text-align: center;
+    margin: 0 auto;  
+}
+table tr td{
+    padding: 10px 0;
+}
+table tr td img{
+    width: 60px;
+    height: 80px;
+}
+table tr td input{
+    width: 45px;
+    text-align: center;
+    outline: none;
+}
+table tr td button{
+    width: 20px;
+    height: 20px;
+}
+table tr td p{
+    font-size: 14px;
+}
+.foot{
+    width: 680px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px dotted gray;
+}
+.foot span:nth-of-type(2){
+    margin-right: 500px;
+    font-size: 18px;
+    color: red;
+}
+.foot button{
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
