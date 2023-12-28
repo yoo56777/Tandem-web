@@ -7,10 +7,10 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='Event.js'></script>
     <script>
-        // $(document).ready(function () {
-        //     getAll();
-        // });
-        // $(window).on("unload", function() { });
+        $(document).ready(function () {
+            getAll();
+        });
+        $(window).on("unload", function() { });
     </script>
 </head>
 <body>
@@ -51,8 +51,43 @@
                     </div>
                 </div>
 
-                <div class="row" id="com-list">
-
+                <div class="row">
+                    <div class="product">
+                        <a href="product.html">
+                        <img src="博美1.jpg" alt="圖片一">
+                        <p>商品一</p></a>
+                        <a href="#"><button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美2.jpg" alt="圖片二">
+                        <p>商品二</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美3.jpeg" alt="圖片三">
+                        <p>商品三</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美1.jpg" alt="圖片四">
+                        <p>商品四</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美2.jpg" alt="圖片五">
+                        <p>商品五</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.youtube.com" target="_blank">
+                        <img src="博美3.jpeg" alt="圖片六">
+                        <p>商品六</p>
+                        <button type="button" style="width: 50%">直接購買</button></a>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -62,7 +97,6 @@
 </html>
 
 <script>
-    let row = getAll()
     let index = 0
 
     // 圖片數量
