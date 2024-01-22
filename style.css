@@ -240,47 +240,6 @@ body {
     object-fit: cover; /* 保持圖片的比例 */
 }
 
-.cartpage{
-    width: 100%; 
-    height: 100px;
-    flex: auto;
-    margin-left: 13%;
-    margin-top: 2%;
-    display:flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    align-items: center;
-    /* background-color: antiquewhite; */
-    border: #121417 solid 2px; 
-
-    
-}
-
-.carttitle{
-    /* background-color: aqua; */
-    flex: none;
-    width: 200px;
-    height: 50px;
-    margin-left: 10px;
-    margin-right: 60px;
-    text-align: center;
-    line-height: 50px;
-    font-size:0.6cm;
-    border-bottom: #121417 solid 2px; 
-    height:50px;    
-}
-
-.cartdetail{
-    width: 100%; 
-    height: 600px;
-    flex: auto;
-    margin-left: 13%;
-    display:flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    align-items: center;
-    background-color: rgb(233, 233, 233);
-}
 
 .box{
     width: 1000px;
