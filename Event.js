@@ -1,6 +1,6 @@
 function getAll(){
     // var dataUrl = "http://172.16.82.2:9090/com/getAll"
-    var dataUrl = "http://localhost:9090/getComAll"
+    var dataUrl = "http://localhost:9090/com/getAll"
 
     $('#com-list').empty();
     $.ajax({
